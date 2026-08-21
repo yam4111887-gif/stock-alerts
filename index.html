@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>到價哨兵｜台股到價提醒（收盤價確認）— 免費、免帳號、資料不出瀏覽器</title>
+<meta name="description" content="免費台股到價提醒工具：設定你關注的股票與目標價，每天收盤後一鍵確認哪些已觸發。使用證券交易所官方開放資料，免帳號、不收集任何個資、不在線爬蟲。">
+<meta name="keywords" content="到價提醒, 股票到價, 台股 提醒, 目標價 提醒, 免費 股票工具, 收盤價 查詢, 股票警示, 到價通知">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://yam4111887-gif.github.io/stock-alerts/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="到價哨兵">
+<meta property="og:title" content="到價哨兵 — 台股到價提醒（免費、免帳號）">
+<meta property="og:description" content="設定目標價，收盤後一鍵確認。交易所官方開放資料，資料不出瀏覽器。">
+<meta property="og:url" content="https://yam4111887-gif.github.io/stock-alerts/">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "到價哨兵",
+  "url": "https://yam4111887-gif.github.io/stock-alerts/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "zh-Hant",
+  "description": "台股到價提醒工具：設定目標價，收盤後一鍵確認。基於證券交易所官方開放資料。",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TWD" }
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><span class="mark">◉</span>到價哨兵</a>
+    <nav class="nav-links">
+      <a href="#tool">開始使用</a>
+      <a href="#how">運作方式</a>
+      <a href="about.html">關於</a>
+      <a href="privacy.html">隱私權政策</a>
+      <a href="disclaimer.html">免責聲明</a>
+    </nav>
+  </div>
+</header>
+
+<section id="hero">
+  <h1>你的股票，到價了嗎？</h1>
+  <p class="hero-sub">設定關注的股票與目標價，每個交易日收盤後一鍵確認哪些已觸發。券商 App 的提醒會漏抓——這裡的清單你自己掌握。</p>
+  <div class="badges">
+    <span class="badge">🆓 免費、免帳號</span>
+    <span class="badge">🔒 清單只存在你的瀏覽器</span>
+    <span class="badge">🏛️ 交易所官方開放資料</span>
+    <span class="badge">🚫 不構成投資建議</span>
+  </div>
+</section>
+
+<main>
+  <div class="data-status" id="data-status">正在載入行情資料…</div>
+
+  <section class="card" id="tool">
+    <h2>我的到價清單</h2>
+    <div class="add-form">
+      <div class="field">
+        <label for="in-code">股票代號</label>
+        <input id="in-code" inputmode="numeric" placeholder="例如 2330" style="width:120px">
+      </div>
+      <div class="field">
+        <label for="in-target">目標價（元）</label>
+        <input id="in-target" inputmode="decimal" placeholder="例如 2400" style="width:130px">
+      </div>
+      <div class="field">
+        <label for="in-dir">提醒條件</label>
+        <select id="in-dir">
+          <option value="gte">收盤價 ≥ 目標</option>
+          <option value="lte">收盤價 ≤ 目標</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="in-note">備註（選填）</label>
+        <input id="in-note" placeholder="例如：停利點" style="width:150px">
+      </div>
+      <button class="primary" id="btn-add">＋ 加入</button>
+    </div>
+
+    <table class="watch-table" id="watch-table">
+      <thead>
+        <tr><th>代號</th><th>名稱</th><th>條件</th><th>最新收盤</th><th>狀態</th><th></th></tr>
+      </thead>
+      <tbody id="watch-body"></tbody>
+    </table>
+    <p class="empty" id="watch-empty" hidden>還沒有項目——加入第一檔股票吧。</p>
+
+    <div style="margin-top:16px; display:flex; gap:10px; align-items:center; flex-wrap:wrap">
+      <button class="primary" id="btn-check">🔄 立即檢查</button>
+      <span id="check-status" style="font-size:.85rem;color:var(--muted)"></span>
+    </div>
+
+    <div class="notice">
+      資料說明：本工具使用<strong>每日收盤後</strong>的收盤價資料（非盤中即時）。資料來源：臺灣證券交易所 OpenAPI（每日平均成交資訊），依<a href="https://data.gov.tw/license" target="_blank" rel="noopener">政府資料開放授權條款</a>使用；資料以<a href="https://www.twse.com.tw" target="_blank" rel="noopener">交易所官方</a>為準，本工具不保證即時與正確。到價提醒屬資訊通知，<strong>不構成任何投資建議</strong>——詳見<a href="disclaimer.html">免責聲明</a>。目前支援上市股票與 ETF（上櫃規劃中）。
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>📊 觸發記錄</h2>
+    <div id="hist-list"></div>
+    <p class="empty" id="hist-empty" hidden>還沒有觸發記錄。</p>
+  </section>
+
+  <section class="card" id="how">
+    <h2>運作方式（誠實版）</h2>
+    <ol>
+      <li><strong>資料</strong>：每個交易日收盤後，我們從證券交易所官方 OpenAPI 取得當日收盤價，更新到本站（依政府開放資料授權條款，標示來源、非官方背書）。</li>
+      <li><strong>清單</strong>：你的觀察清單存在你自己瀏覽器的 localStorage——沒有帳號、沒有伺服器資料庫，換電腦需要重新輸入（這是隱私的代價）。</li>
+      <li><strong>提醒</strong>：開啟頁面或按「立即檢查」時比對收盤價與你的目標，觸發的項目會記錄下來。這是<strong>收盤後確認</strong>型工具，不是盤中即時推播——如果需要盤中即時，請使用券商官方 App 的到價警示。</li>
+      <li><strong>為什麼免費</strong>：純靜態網站幾乎零成本。未來可能放置廣告（如 Google AdSense）維持，屆時於隱私權政策揭露，內容永遠免費。</li>
+    </ol>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="logo" style="font-size:1rem"><span class="mark">◉</span>到價哨兵</div>
+    <nav class="footer-links">
+      <a href="about.html">關於</a>
+      <a href="privacy.html">隱私權政策</a>
+      <a href="disclaimer.html">免責聲明</a>
+    </nav>
+    <div class="footer-note">© 2026 到價哨兵 — 資料來源：臺灣證券交易所 OpenAPI（政府資料開放授權條款）。本工具不構成投資建議，投資決策風險自負。</div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
