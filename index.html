@@ -57,7 +57,16 @@
     <span class="badge">交易所官方開放資料</span>
     <span class="badge">不構成投資建議</span>
   </div>
+<div class="hero-cta">
+  <a class="btn-cta primary" href="#tool"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg> 設定第一檔股票</a>
+  <a class="btn-cta ghost" href="#how"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"/><path d="M3 6h.01M3 12h.01M3 18h.01"/></svg> 運作方式</a>
+</div>
 </section>
+<div class="stats-band" role="list" aria-label="特色速覽">
+  <div class="stat" role="listitem"><b>每交易日</b><span>收盤後更新行情，一鍵檢查觸發</span></div>
+  <div class="stat" role="listitem"><b>0 帳號</b><span>免註冊，清單只存在你的瀏覽器</span></div>
+  <div class="stat" role="listitem"><b>官方資料</b><span>交易所開放資料，非第三方行情商</span></div>
+</div>
 
 <main id="main-content">
   <div class="data-status" id="data-status">正在載入行情資料…</div>
@@ -96,7 +105,7 @@
     <p class="empty" id="watch-empty" hidden>還沒有項目——加入第一檔股票吧。</p>
 
     <div style="margin-top:16px; display:flex; gap:10px; align-items:center; flex-wrap:wrap">
-      <button class="primary" id="btn-check">🔄 立即檢查</button>
+      <button class="primary" id="btn-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg> 立即檢查</button>
       <span id="check-status" style="font-size:.85rem;color:var(--muted)"></span>
     </div>
 
@@ -120,17 +129,36 @@
       <li><strong>為什麼免費</strong>：純靜態網站幾乎零成本。未來可能放置廣告（如 Google AdSense）維持，屆時於隱私權政策揭露，內容永遠免費。</li>
     </ol>
   </section>
+<section class="cta-band" aria-label="開始設定">
+  <h2>讓到價提醒不再漏接</h2>
+  <p>券商 App 的提醒會漏抓——這裡的清單你自己掌握。加入股票、設好目標價，每天收盤後一鍵確認。</p>
+  <a class="btn-cta primary" href="#tool"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg> 加入第一檔股票</a>
+</section>
 </main>
 
-<footer>
-  <div class="footer-inner">
-    <div class="logo" style="font-size:1rem"><span class="mark"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 6.5 6.5 0 0 1-9-9z"/><circle cx="8" cy="8" r="1.3"/><circle cx="16" cy="16" r="1.3"/></svg></span>到價哨兵</div>
-    <nav class="footer-links">
-      <a href="about.html">關於</a>
-      <a href="privacy.html">隱私權政策</a>
-      <a href="disclaimer.html">免責聲明</a>
-    </nav>
-    <div class="footer-note">© 2026 到價哨兵 — 資料來源：臺灣證券交易所 OpenAPI（政府資料開放授權條款）。本工具不構成投資建議，投資決策風險自負。</div>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="f-brand">
+      <div class="logo"><span class="mark"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 6.5 6.5 0 0 1-9-9z"/><circle cx="8" cy="8" r="1.3"/><circle cx="16" cy="16" r="1.3"/></svg></span> 到價哨兵</div>
+      <p class="f-tag">設定關注股票與目標價，每個交易日收盤後一鍵確認哪些已觸發。免費、免帳號，清單只存在你的瀏覽器。</p>
+    </div>
+      <div class="f-col">
+        <h4>開始用</h4>
+        <a href="index.html#tool">我的到價清單</a>
+        <a href="index.html#how">運作方式（誠實版）</a>
+      </div>
+      <div class="f-col">
+        <h4>站內資源</h4>
+        <a href="about.html">關於到價哨兵</a>
+        <a href="privacy.html">隱私權政策</a>
+        <a href="disclaimer.html">免責聲明</a>
+      </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <span class="f-note">© 2026 到價哨兵 — 免費工具，資料僅供個人參考，不構成投資建議。</span>
+      <a class="to-top" href="#"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg> 回到頂端</a>
+    </div>
   </div>
 </footer>
 
